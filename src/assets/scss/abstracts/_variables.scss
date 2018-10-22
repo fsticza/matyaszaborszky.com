@@ -1,0 +1,40 @@
+$dark-blue: #21333a;
+$danger: #C32B2B;
+$pink: #E43D91;
+$gray: #919191;
+$semi-light-gray: #c7c7c7;
+$light-gray: #F7F7F7;
+$dark-green: #162126;
+
+$section-spacing: 7rem;
+
+// bootstrap
+// $font-family-sans-serif: Roboto, sans-serif;
+// $font-family-monospace: "Roboto Mono", Consolas, monospace;
+$body-bg: #fff;
+$body-color: $dark-blue;
+$primary: $dark-blue;
+$light: #fff;
+$dark: #000;
+
+$font-family-base: 'Montserrat', sans-serif;
+$headings-font-family: 'Playfair Display', serif;
+$font-size-base: 0.875rem;
+$link-color: $pink;
+$link-hover-color: #fff;
+$link-hover-decoration: none;
+
+$input-btn-border-width: 0;
+$input-btn-padding-y: 1rem;
+$input-btn-padding-x: 2rem;
+$input-bg: transparent;
+$input-border-radius: 0;
+
+$btn-border-radius: $input-btn-padding-y + 1.5rem;
+$btn-font-weight: 600;
+
+$headings-font-weight: 900;
+
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";

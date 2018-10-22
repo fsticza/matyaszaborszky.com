@@ -1,4 +1,4 @@
-# magyaszaborszky.com
+# matyaszaborszky.com
 
 ## Project setup
 ```

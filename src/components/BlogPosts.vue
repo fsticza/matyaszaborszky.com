@@ -18,6 +18,7 @@
         </div>
       </article>
     </a>
+    <a class="inline-link ml-4" href="https://medium.com/@matyaszaborszky" target="_blank">&#9656; More posts</a>
   </section>
 </template>
 

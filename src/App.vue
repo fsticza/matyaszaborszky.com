@@ -29,11 +29,6 @@
               </li>
             </ul>
           </div>
-          <span>
-            <a href="">f</a>
-            <a href="">t</a>
-            <a href="">y</a>
-          </span>
         </div>
       </nav>
     </header>
@@ -59,7 +54,7 @@
       <section id="services">
         <div class="section">
           <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
               <div class="col-sm-6 order-6">
                 <h1 class="section__title">Services</h1>
                 <h2 class="section__lead">Guaranteed to WIN with your token offering</h2>
@@ -73,9 +68,10 @@
                   style="position:relative;top:8.675rem;">Contact me now</a>
               </div>
               <div class="col-sm-6 order-1">
-
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/idk1ZLB2q8I" allowfullscreen></iframe>
+                </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -171,32 +167,14 @@
         </div>
       </section>
 
-      <article class="section">
+      <article id="testimonials" class="section">
         <div class="container">
-          <div class="row">
-            <div class="col-sm-5">
-              <h1 class="section__title">Testimonials</h1>
-
-              <blockquote class="blockquote">
-                <p class="h2">
-                  If you want real marketing that works and effective implementation - Ikkk's got you covered. 
-                  If you aren't sure, always go for Ikkk.
-                </p>
-                <footer class="blockquote-footer my-3">
-                  <span class="">Dyanna Y.</span>
-                  <a class="float-right inline-link" href="">&#9656; Visit his/her LinkedIn</a>
-                </footer>
-              </blockquote>
-            </div>
-            <div class="col-sm-5 offset-sm-2">
-              <img width="480" class="img-fluid shaded" src="./assets/img/rawpixel-648567-unsplash.jpg" />
-            </div>
-          </div>
+          <testimonials />
         </div>
 
       </article>
 
-      <section class="section section--gray">
+      <section id="blog" class="section section--gray">
         <div class="container">
           <div class="row">
             <div class="col-sm-5 offset-sm-1 order-6">
@@ -215,7 +193,7 @@
 
       </section>
 
-      <article class="section">
+      <article id="about" class="section">
         <div class="container">
           <div class="row">
             <div class="col-sm-5 offset-sm-1">
@@ -258,7 +236,7 @@
       <article id="contact" class="section section--gray">
         <div class="container">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-5 offset-sm-1">
               <h1 class="section__title">Contact</h1>
               <h2 class="section__lead">Send me a message</h2>
 
@@ -320,7 +298,7 @@
           <h1 class="sr-only">Matyas Zaborszky</h1>
           <div class="row">
             <div class="col">
-              Matyas Zaborszky
+              <img src="./assets/img/logo.svg" alt="Matyas Zaborszky" class="mb-4 mt-2 img-fluid">
 
               <follow-me />
             </div>
@@ -405,6 +383,7 @@
 
 import FollowMe from '@/components/FollowMe'
 import BlogPosts from '@/components/BlogPosts'
+import Testimonials from '@/components/Testimonials'
 
 export default {
   name: 'app',
@@ -435,7 +414,8 @@ export default {
   },
   components: {
     FollowMe,
-    BlogPosts
+    BlogPosts,
+    Testimonials
   }
 }
 </script>

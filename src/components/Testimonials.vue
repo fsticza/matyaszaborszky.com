@@ -40,7 +40,7 @@
 
 const requestInterval = function (fn, delay) {
   var requestAnimFrame = (function () {
-    return window.requestAnimationFrame || function (callback, element) {
+    return window.requestAnimationFrame || function (callback) {
       window.setTimeout(callback, 1000 / 60);
     }
   })(),

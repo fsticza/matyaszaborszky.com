@@ -35,12 +35,13 @@
 
     <main class="main-content">
       <div class="section section--head">
+        <div class="bg-shade"></div>
         <div ref="first-content" class="container text-white">
           <h1>
-            <img class="text-white" src="./assets/img/logo.svg" alt="Matyas Zaborszky" height="32">
+            <img class="text-white logo" src="./assets/img/logo.svg" alt="Matyas Zaborszky" height="32">
           </h1>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-10 col-md-6 text-content">
               <h2 class="section__lead">The killer ingredient on your road to success</h2>
               <p class="section__sub-lead">
                 Winning marketing and PR strategies for a knockout token sale!
@@ -55,7 +56,7 @@
         <div class="section">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-sm-6 order-6">
+              <div class="col-lg-6 order-lg-6">
                 <h1 class="section__title">Services</h1>
                 <h2 class="section__lead">Guaranteed to WIN with your token offering</h2>
                 <p>
@@ -67,7 +68,7 @@
                 <a href="#contact" class="btn btn-primary"
                   style="position:relative;top:8.675rem;">Contact me now</a>
               </div>
-              <div class="col-sm-6 order-1">
+              <div class="col-lg-6 order-lg-1">
                 <div class="embed-responsive embed-responsive-16by9">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/idk1ZLB2q8I" allowfullscreen></iframe>
                 </div>
@@ -234,148 +235,12 @@
       </article>
 
       <article id="contact" class="section section--gray">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-5 offset-sm-1">
-              <h1 class="section__title">Contact</h1>
-              <h2 class="section__lead">Send me a message</h2>
-
-              <p>
-                For more detailed information on how I can help you achieve your goals, let me know how to reach
-                you and I will get back to you within two working days.
-              </p>
-
-              <follow-me />
-            </div>
-            <div class="col-sm-6">
-              <form action="">
-                
-                <div class="form-group">
-                  <label class="form-label" for="">Full name</label>
-                  <input type="text" class="form-control" name="name" maxlength="50" required />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="">Country</label>
-                  <input type="text" class="form-control" name="country" maxlength="30" required />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="">Email</label>
-                  <input type="email" class="form-control" name="email" maxlength="30" required />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="">Phone</label>
-                  <input type="tel" class="form-control" name="tel" maxlength="30" required />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="">Telegram (optional)</label>
-                  <textarea class="form-control" name="telegram"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">
-                  Done
-                </button>
-
-              </form>
-            </div>
-          </div>
-
-        </div>
-
-
+        <contact-section />
       </article>
 
     </main>
 
-    <footer class="bg-primary text-white">
-      <div class="section">
-
-        <div class="container">
-
-          <h1 class="sr-only">Matyas Zaborszky</h1>
-          <div class="row">
-            <div class="col">
-              <img src="./assets/img/logo.svg" alt="Matyas Zaborszky" class="mb-4 mt-2 img-fluid">
-
-              <follow-me />
-            </div>
-
-            <div class="col">
-              <h1 class="h3">Contact</h1>
-
-              <div class="my-3">
-                Mátyás Zaborszky
-              </div>
-
-              <div class="my-3">
-                <a class="inline-link" href="tel:1-305-447-7816">
-                  1-305-447-7816
-                </a>
-              </div>
-
-              <div class="my-3">
-                <a class="inline-link" href="mailto:mz@matyaszaborszky.com">
-                  mz@matyaszaborszky.com
-                </a>
-              </div>
-
-              <address>
-              10685-B Hazelhurst Dr. # 21025
-              Houston, TX 77043
-              </address>
-
-            </div>
-
-            <div class="col">
-              <h1 class="h3">Services</h1>
-
-              <div class="mt-3">My book</div> 
-              <a class="inline-link" href="http://www.6steps.online/" target="_blank">&#9656; www.6steps.online</a>
-
-              <div class="mt-2">Guide for you team</div>
-              <a class="inline-link" href="" target="_blank">&#9656; www.tokenmarketing.expert</a>
-
-              <div class="mt-2">Team for your Lambo</div>
-              <a class="inline-link" href="https://6slambo.com/" target="_blank">&#9656; www.6slambo.com</a>
-              
-              <div class="mt-2">Tuti tippek</div>
-              <a class="inline-link" href="" target="_blank">&#9656; www.privatesale.vip</a>
-
-              <div class="mt-2">Blog, tuti hírekkel</div>
-              <a class="inline-link" href="" target="_blank">&#9656; www.icoexpert.blog</a>
-
-            </div>
-
-            <div class="col">
-              <h1 class="h3">Etc.</h1>
-              <div class="mt-3">
-                Privacy Policy
-              </div>
-              <div class="mt-3">
-                Terms & Conditions 
-              </div>
-              <div class="mt-3">
-                Earnings Disclaimer
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <div class="container">
-          Copyright &copy; 2018 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Matyas Zaborszky
-          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;All rights reserved.
-          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;AZ Organization LLC,  
-           <address class="d-inline"> 10685-B Hazelhurst Dr. # 21025, Houston, TX 77043</address>
-        </div>
-      </div>
-
-    </footer>
+    <footer-section />
   </div>
 </template>
 
@@ -384,6 +249,8 @@
 import FollowMe from '@/components/FollowMe'
 import BlogPosts from '@/components/BlogPosts'
 import Testimonials from '@/components/Testimonials'
+import ContactSection from '@/components/ContactSection'
+import FooterSection from '@/components/FooterSection'
 
 export default {
   name: 'app',
@@ -415,7 +282,9 @@ export default {
   components: {
     FollowMe,
     BlogPosts,
-    Testimonials
+    Testimonials,
+    ContactSection,
+    FooterSection
   }
 }
 </script>
@@ -428,9 +297,51 @@ export default {
   padding-bottom: $section-spacing;
 }
 .section--head {
-  background: url('./assets/img/header-bg.png') no-repeat;
-  background-position: 0 0;
-  background-size: 100% auto;
+  background: url('./assets/img/main_image_v0_1x.jpg') no-repeat;
+  background-position: 50% 50%;
+  background-size: auto 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  @include media-breakpoint-up(xl) {
+    background-position: 0 0;
+    background-size: 100% auto;
+  }
+
+  .bg-shade {
+    background: rgba(0, 0, 0, .35);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      background: linear-gradient(to right, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, .6) 30%, transparent 60%) repeat-y;
+    }
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      bottom: -40px;
+      right: 0;
+      width: 200%;
+      height: 100px;
+      background: white;
+      transform: skew(268.6deg);
+    }
+  }
+  .text-content,
+  .logo {
+    position: relative;
+    z-index: 3;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
 }
 .section--gray {
   background: $light-gray;
@@ -445,16 +356,35 @@ export default {
 }
 .section__sub-title {
   font-family: $font-family-base;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 1.5rem 0;
+  @include media-breakpoint-up(md) {
+    font-size: 1.25rem;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5rem;
+  }
 }
 .section__lead {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin: 1.5rem 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: 3rem;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 3.5rem;
+  }
 }
 .section__sub-lead {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 2rem 0;
+  @include media-breakpoint-up(md) {
+    font-size: 1.25rem;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5rem;
+  }
 }
 .form-label {
   color: $gray;
@@ -475,6 +405,10 @@ export default {
 .copyright {
   background: $dark-green;
   padding: 1.5rem 0;
+}
+
+.fade {
+  will-change: opacity;
 }
 
 </style>

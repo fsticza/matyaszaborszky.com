@@ -6,26 +6,18 @@
           <a class="navbar-brand" href="/">
             <img src="./assets/img/logo.svg" alt="Matyas Zaborszky" height="16">
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#testimonials">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#blog">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+              <li class="nav-item"
+                v-for="({id, label}, index) in sections"
+                :key="id"
+                :class="{'active': index === activeSectionIndex}"
+                >
+                <a class="nav-link" :href="`#${id}`">{{label}}</a>
               </li>
             </ul>
           </div>
@@ -254,11 +246,34 @@ export default {
   name: 'app',
   data () {
     return {
-      navbarClass: ''
+      navbarClass: '',
+      activeSectionIndex: 0,
+      sections: [
+        {
+          id: 'services',
+          label: 'Services'
+        },
+        {
+          id: 'testimonials',
+          label: 'Testimonials'
+        },
+        {
+          id: 'blog',
+          label: 'Blog'
+        },
+        {
+          id: 'about',
+          label: 'About'
+        },
+        {
+          id: 'contact',
+          label: 'Contact'
+        },
+      ]
     }
   },
   mounted () {
-    const callback = entries => { 
+    const firstContentCallback = entries => { 
       entries.forEach(entry => {
         if (entry.intersectionRatio < 0.9) {
           this.navbarClass = 'show'
@@ -267,15 +282,34 @@ export default {
         this.navbarClass = ''
       })
     }
-    const observer = new IntersectionObserver(callback, {
+    const firstContentObserver = new IntersectionObserver(firstContentCallback, {
       root: null,
       rootMargin: '-100px',
       threshold: Array(100 + 1)
         .fill(0)
         .map((_, index) => index / 100 || 0)
     })
-    observer.observe(this.$refs['first-content'])
+    firstContentObserver.observe(this.$refs['first-content'])
 
+    const navigationCallback = entries => { 
+      entries.forEach(entry => {
+        const sectionIndex = this.sections.findIndex(({ id }) => entry.target.id === id)
+        if (entry.intersectionRatio > 0.3) {
+          this.activeSectionIndex = sectionIndex
+          return
+        }
+      })
+    }
+    const navigationObserver = new IntersectionObserver(navigationCallback, {
+      root: null,
+      rootMargin: '-100px',
+      threshold: Array(100 + 1)
+        .fill(0)
+        .map((_, index) => index / 100 || 0)
+    })
+    this.sections.forEach(section => {
+      navigationObserver.observe(document.getElementById(section.id))
+    })
   },
   components: {
     FollowMe,
@@ -409,6 +443,11 @@ export default {
   will-change: opacity;
 }
 
+.nav-link {
+  &:hover {
+    background: transparent;
+  }
+}
 .contact-btn-position {
   position:relative;
   top: $section-spacing + $input-btn-padding-y + 0.615rem;

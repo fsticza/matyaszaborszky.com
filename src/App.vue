@@ -65,8 +65,7 @@
         have guided great crypto brands to success and I can help you too make the leap from your Big
         Idea to a Blowout Token Sale!
                 </p>
-                <a href="#contact" class="btn btn-primary"
-                  style="position:relative;top:8.675rem;">Contact me now</a>
+                <a href="#contact" class="btn btn-primary contact-btn-position">Contact me now</a>
               </div>
               <div class="col-lg-6 order-lg-1">
                 <div class="embed-responsive embed-responsive-16by9">
@@ -162,8 +161,7 @@
             </div>
           </div>
           <div class="text-center">
-            <a href="#contact" class="btn btn-primary"
-                    style="position:relative;top:8.675rem;">Contact me now</a>
+            <a href="#contact" class="btn btn-primary contact-btn-position">Contact me now</a>
           </div>
         </div>
       </section>
@@ -409,6 +407,11 @@ export default {
 
 .fade {
   will-change: opacity;
+}
+
+.contact-btn-position {
+  position:relative;
+  top: $section-spacing + $input-btn-padding-y + 0.615rem;
 }
 
 </style>

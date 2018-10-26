@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <header>
-      <nav :class="[navbarClass]" class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary fade">
+      <nav :class="[navbarClass]" class="main-navigation navbar fixed-top navbar-expand-lg navbar-dark bg-primary fade">
         <div class="container">
           <a class="navbar-brand" href="/">
-            <img src="./assets/img/logo.svg" alt="Matyas Zaborszky" height="16">
+            <img src="./assets/img/logo.svg" alt="Matyas Zaborszky" class="brand-img" height="14">
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" @click="toggleNavigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -71,7 +71,7 @@
         <div class="section section--gray">
           <div class="container">
             <div class="row">
-              <article class="col-lg-3 offset-lg-2 col-md-4 offset-md-1">
+              <article class="col-lg-3 offset-lg-2 col-md-4 offset-md-1 mb-4">
                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <rect width="64" height="64" fill="url(#pattern0)"/>
                   <defs>
@@ -90,7 +90,7 @@
                 </p>
                 <a class="inline-link" href="#contact">&#9656; Just click for more!</a>
               </article>
-              <article class="col-lg-3 offset-lg-2 col-md-4 offset-md-1">
+              <article class="col-lg-3 offset-lg-2 col-md-4 offset-md-1 mb-4">
                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <rect width="64" height="64" fill="url(#pattern0)"/>
                   <defs>
@@ -111,7 +111,7 @@
               </article>
             </div>
             <div class="row">
-              <article class="col-lg-3 offset-lg-2 col-md-4 offset-md-1">
+              <article class="col-lg-3 offset-lg-2 col-md-4 offset-md-1 mb-4">
                 
                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <rect width="64" height="64" fill="url(#pattern0)"/>
@@ -159,7 +159,7 @@
       </section>
 
       <article id="testimonials" class="section">
-        <div class="container">
+        <div class="container" style="min-height: 27rem;">
           <testimonials />
         </div>
 
@@ -168,15 +168,15 @@
       <section id="blog" class="section section--gray">
         <div class="container">
           <div class="row">
-            <div class="col-sm-5 offset-sm-1 order-6">
+            <div class="col-md-5 offset-md-1 order-md-6">
               <h1 class="section__title">Blog</h1>
               <h2 class="section__lead">Get up to date on crypto news</h2>
               <div class="py-4">
                 <follow-me />
               </div>
-              <a href="#contact" class="btn btn-primary">Contact me now</a>
+              <a href="#contact" class="btn btn-primary mb-4">Contact me now</a>
             </div>
-            <div class="col-sm-6 order-1">
+            <div class="col-md-6 order-md-1">
               <blog-posts />
             </div>
           </div>
@@ -311,6 +311,12 @@ export default {
       navigationObserver.observe(document.getElementById(section.id))
     })
   },
+  methods: {
+    toggleNavigation() {
+      document.getElementById('main-navigation')
+        .classList.toggle('collapse')
+    }
+  },
   components: {
     FollowMe,
     BlogPosts,
@@ -323,6 +329,25 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/app";
+
+a:hover {
+  background: $pink;
+}
+
+.brand-img {
+  @include media-breakpoint-up(sm) {
+    height: 16px;
+  }
+}
+
+.main-navigation {
+  .nav-link,
+  .navbar-brand {
+    &:hover {
+      background: transparent;
+    }
+  }
+}
 
 .section {
   padding-top: $section-spacing;
@@ -357,7 +382,7 @@ export default {
     &:after {
       content: ' ';
       position: absolute;
-      bottom: -40px;
+      bottom: -44px;
       right: 0;
       width: 200%;
       height: 100px;
@@ -418,10 +443,6 @@ export default {
     font-size: 1.5rem;
   }
 }
-.form-label {
-  color: $gray;
-  text-transform: uppercase;
-}
 .shaded {
   box-shadow: 20px 20px 0 rgba(0, 0 , 0, .05)
 }
@@ -451,6 +472,52 @@ export default {
 .contact-btn-position {
   position:relative;
   top: $section-spacing + $input-btn-padding-y + 0.615rem;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-primary,
+.btn-light {
+  transition: background-color .3s, color .3s;
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $primary;
+    z-index: -1;
+    border-radius: inherit;
+    transform: scale3d(0.6, 0.6, 1);
+    transition: transform 0.3s, opacity 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: $primary;
+
+    &:before {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+    }
+  }
+}
+.btn-light {
+  &:before {
+    border-color: #fff;
+  }
+  &:hover {
+    background-color: $primary;
+    color: #fff;
+  }
 }
 
 </style>

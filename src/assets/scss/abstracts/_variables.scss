@@ -24,13 +24,16 @@ $link-color: $pink;
 $link-hover-color: #fff;
 $link-hover-decoration: none;
 
+$input-btn-focus-width: 0;
 $input-btn-border-width: 0;
-$input-btn-padding-y: 1rem;
-$input-btn-padding-x: 2rem;
 $input-bg: transparent;
 $input-border-radius: 0;
 
-$btn-border-radius: $input-btn-padding-y + 1.5rem;
+$input-padding-x: 0;
+
+$btn-padding-y: 1rem;
+$btn-padding-x: 2rem;
+$btn-border-radius: $btn-padding-y + 1.5rem;
 $btn-font-weight: 600;
 
 $headings-font-weight: 900;

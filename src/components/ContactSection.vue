@@ -13,31 +13,46 @@
         <follow-me />
       </div>
       <div class="col-sm-6">
-        <form action="">
+        <form action="" class="needs-validation" @submit.prevent="onContactSubmit" novalidate>
           
           <div class="form-group">
             <label class="form-label" for="">Full name</label>
             <input type="text" class="form-control" name="name" maxlength="50" required />
+            <div class="invalid-feedback">
+              Please provide a valid name.
+            </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="">Country</label>
             <input type="text" class="form-control" name="country" maxlength="30" required />
+            <div class="invalid-feedback">
+              Please provide a valid contry.
+            </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="">Email</label>
             <input type="email" class="form-control" name="email" maxlength="30" required />
+            <div class="invalid-feedback">
+              Please provide a valid email.
+            </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="">Phone</label>
             <input type="tel" class="form-control" name="tel" maxlength="30" required />
+            <div class="invalid-feedback">
+              Please provide a valid phone.
+            </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="">Telegram (optional)</label>
-            <textarea class="form-control" name="telegram"></textarea>
+            <textarea class="form-control" minlength="10" name="telegram"></textarea>
+            <div class="invalid-feedback">
+              Please write at least 10 characters.
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary">
@@ -55,8 +70,47 @@
 import FollowMe from '@/components/FollowMe'
 export default {
   name: 'ContactSection',
+  methods: {
+    onContactSubmit (ev) {
+      if(ev.target.checkValidity()) {
+        // console.log('valid')
+        return
+      }
+      ev.target.classList.add('was-validated')
+    }
+  },
   components: {
     FollowMe
   }
 }
 </script>
+
+<style lang="scss">
+@import "../assets/scss/abstracts/variables";
+
+.form-label {
+  color: $gray;
+  text-transform: uppercase;
+}
+
+.form-group {
+  .form-control {
+    border-bottom-width: 1px;
+    outline: 0 0 1px;
+    margin-bottom: 2.25rem;
+  }
+}
+
+.invalid-feedback {
+  font-weight: bold;
+}
+
+.was-validated {
+  .form-control {
+    &:invalid {
+      margin-bottom: 0;
+    }
+  }
+}
+
+</style>

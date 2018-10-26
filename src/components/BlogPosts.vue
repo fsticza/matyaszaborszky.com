@@ -6,10 +6,10 @@
       v-for="{guid, isHighlighted, pubDate, title, thumbnail, link} in posts" 
       :key="guid">
       <article :class="{'row': isHighlighted}" >
-        <div v-if="isHighlighted" :class="{'col-sm-6': isHighlighted}" class="blog-post__tn-wrapper">
+        <div v-if="isHighlighted" :class="{'col-6': isHighlighted}" class="blog-post__tn-wrapper">
           <img class="blog-post__tn" :src="thumbnail" />
         </div>
-        <div :class="{'col-sm-6': isHighlighted}">
+        <div :class="{'col-6': isHighlighted}">
           <time class="text-primary" :datetime="pubDate">{{new Intl.DateTimeFormat('en-US', {
             month: 'long', day: 'numeric', year: 'numeric'
           }).format(new Date(pubDate))}}</time>
@@ -51,16 +51,19 @@ export default {
   margin: 0 0 3rem;
   background: white;
   padding: 1.5rem 2rem;
+  overflow: hidden;
 }
 .blog-post__tn-wrapper {
   margin: -1.5rem 2rem -1.5rem -2rem;
   width: 50%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 .blog-post__tn {
   position: absolute;
   max-height: 100%;
+  margin-left: -50%;
+  left: 25%;
   width: auto;
 }
 </style>

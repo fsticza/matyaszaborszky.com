@@ -1,6 +1,6 @@
 <template>
   <div class="row align-items-center">
-    <div class="col-sm-5">
+    <div class="col-md-5">
       <h1 class="section__title">Testimonials</h1>
       <transition tag="div" name="carousel-text-fade" mode="out-in">
         <blockquote v-for="(item, index) in items"
@@ -24,7 +24,7 @@
         </li>
       </ol>
     </div>
-    <div class="col-sm-5 offset-sm-2">
+    <div class="col-md-5 offset-md-2">
       <transition tag="div" name="carousel-image-fade" mode="out-in">
         <img width="480" v-for="(item, index) in items"
           v-if="activeIndex === index" 

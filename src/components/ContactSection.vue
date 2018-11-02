@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-5 offset-sm-1">
+        <img class="fingerprint" style="left:-160px;top:40px; filter: invert(.5)" src="../assets/img/fingerprint.svg" alt="">
         <h1 class="section__title">Contact</h1>
         <h2 class="section__lead">Send me a message</h2>
 

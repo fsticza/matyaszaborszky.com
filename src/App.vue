@@ -4,7 +4,7 @@
       <nav :class="[navbarClass]" class="main-navigation navbar fixed-top navbar-expand-lg navbar-dark bg-primary fade">
         <div class="container">
           <a class="navbar-brand" href="/">
-            <img src="./assets/img/logo.svg" alt="Matyas Zaborszky" class="brand-img" height="14">
+            <img src="./assets/img/logo.svg" alt="Matyas Zaborszky" class="brand-img" height="12">
           </a>
           <button class="navbar-toggler" type="button" @click="toggleNavigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,6 +34,7 @@
           </h1>
           <div class="row">
             <div class="col-sm-10 col-md-6 text-content">
+              <img class="fingerprint" style="left:-100px;top:-20px;" src="./assets/img/fingerprint.svg" alt="">
               <h2 class="section__lead">The killer ingredient on your road to success</h2>
               <p class="section__sub-lead">
                 Winning marketing and PR strategies for a knockout token sale!
@@ -49,8 +50,8 @@
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-6 order-lg-6">
-                <h1 class="section__title">Services</h1>
-                <h2 class="section__lead">Guaranteed to WIN with your token offering</h2>
+                <img class="fingerprint" style="right:-100px;top:-20px; filter: invert(.5)" src="./assets/img/fingerprint.svg" alt="">
+                <h1 class="section__lead">Guaranteed to WIN with your token offering</h1>
                 <p>
                   With the number of crypto products skyrocketing, having a great product just isn’t
         enough anymore without best in class marketing skills to command the audience’s attention. I
@@ -70,6 +71,12 @@
 
         <div class="section section--gray">
           <div class="container">
+            <div class="row">
+              <div class="col-lg-3 offset-lg-2 col-md-4 offset-md-1 mb-4">
+                <img class="fingerprint" style="left:100px;top:-180px; filter: invert(.5)" src="./assets/img/fingerprint.svg" alt="">
+                <h1 class="services__title mb-5">Services</h1>
+              </div>
+            </div>
             <div class="row">
               <article class="col-lg-3 offset-lg-2 col-md-4 offset-md-1 mb-4">
                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -160,6 +167,7 @@
 
       <article id="testimonials" class="section">
         <div class="container" style="min-height: 27rem;">
+          <img class="fingerprint" style="right:35%;bottom:20px; filter: invert(.5)" src="./assets/img/fingerprint.svg" alt="">
           <testimonials />
         </div>
 
@@ -167,9 +175,10 @@
 
       <section id="blog" class="section section--gray">
         <div class="container">
+          <img class="fingerprint" style="right:40%;top:200px; filter: invert(.5)" src="./assets/img/fingerprint.svg" alt="">
           <div class="row">
             <div class="col-md-5 offset-md-1 order-md-6">
-              <h1 class="section__title">Blog</h1>
+              <h1 class="section__title">Stream</h1>
               <h2 class="section__lead">Get up to date on crypto news</h2>
               <div class="py-4">
                 <follow-me />
@@ -217,12 +226,15 @@
               </p>
             </div>
             <div class="col-sm-5 offset-sm-1">
-              <img class="img-fluid" src="./assets/img/matyaslaunch.png" alt="">
+              <img style="position:relative;z-index:2;" class="img-fluid" src="./assets/img/matyas-nyers.jpg" alt="">
+              <img class="fingerprint" style="left:-80px;top:-60px; filter: invert(.5)" src="./assets/img/fingerprint.svg" alt="">
             </div>
           </div>  
         </div>
 
       </article>
+
+      <link-section />
 
       <article id="contact" class="section section--gray">
         <contact-section />
@@ -240,6 +252,7 @@ import FollowMe from '@/components/FollowMe'
 import BlogPosts from '@/components/BlogPosts'
 import Testimonials from '@/components/Testimonials'
 import ContactSection from '@/components/ContactSection'
+import LinkSection from '@/components/LinkSection'
 import FooterSection from '@/components/FooterSection'
 
 export default {
@@ -259,7 +272,7 @@ export default {
         },
         {
           id: 'blog',
-          label: 'Blog'
+          label: 'Stream'
         },
         {
           id: 'about',
@@ -322,6 +335,7 @@ export default {
     BlogPosts,
     Testimonials,
     ContactSection,
+    LinkSection,
     FooterSection
   }
 }
@@ -334,13 +348,20 @@ a:hover {
   background: $pink;
 }
 
-.brand-img {
-  @include media-breakpoint-up(sm) {
+body {
+  overflow-x: hidden;
+}
+
+@include media-breakpoint-up(sm) {
+  .brand-img {
     height: 16px;
   }
 }
 
 .main-navigation {
+  .nav-item {
+    text-transform: uppercase;
+  }
   .nav-link,
   .navbar-brand {
     &:hover {
@@ -350,21 +371,27 @@ a:hover {
 }
 
 .section {
+  position: relative;
   padding-top: $section-spacing;
   padding-bottom: $section-spacing;
+
+  .fingerprint {
+    position: absolute;
+    z-index: 0;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .section--head {
+    background: url('./assets/img/main_image_2x.jpg') no-repeat;  
+  }
 }
 .section--head {
-  background: url('./assets/img/main_image_v0_1x.jpg') no-repeat;
+  background: url('./assets/img/main_image_1x.jpg') no-repeat;
   background-position: 50% 50%;
   background-size: auto 100%;
   position: relative;
   z-index: 1;
   overflow: hidden;
-
-  @include media-breakpoint-up(xl) {
-    background-position: 0 0;
-    background-size: 100% auto;
-  }
 
   .bg-shade {
     background: rgba(0, 0, 0, .35);
@@ -455,6 +482,10 @@ a:hover {
   margin-right: -3px;
 }
 
+.services__title {
+  font-size: 3rem;
+}
+
 .copyright {
   background: $dark-green;
   padding: 1.5rem 0;
@@ -469,9 +500,14 @@ a:hover {
     background: transparent;
   }
 }
+
 .contact-btn-position {
-  position:relative;
-  top: $section-spacing + $input-btn-padding-y + 0.615rem;
+  margin: 2rem 0 3rem;
+  @include media-breakpoint-up(sm) {
+    margin: 0;
+    position:relative;
+    top: $section-spacing + $input-btn-padding-y + 1.25rem;
+  }
 }
 
 .btn {

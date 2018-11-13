@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-md-6 col-lg-3">
-              <h1 class="h3 mt-4">Legal</h1>
+              <h1 class="h3 mt-4 mt-md-0">Legal</h1>
               <div class="mt-3">
                 <a class="inline-link" href="">&#9656; Privacy Policy</a>
               </div>
